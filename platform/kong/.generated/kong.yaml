@@ -44,18 +44,18 @@ plugins:
   tags:
   - platform-repo-managed
 services:
-- host: flights.kongair
-  id: 0cef4d36-9c39-5ac2-9d9f-190d8ea8a252
-  name: flights-service
+- host: api.kong-air.com
+  id: 7f944656-ae23-515e-9901-0e4167ff00fe
+  name: flights-service-for-cbs
   path: /
   plugins: []
-  port: 8080
-  protocol: http
+  port: 443
+  protocol: https
   routes:
-  - id: 7b2dbd94-ec5b-5ae8-b6d5-4c8b16ce0b06
+  - id: dce8e024-ed43-5e7e-b7e9-09776e12439f
     methods:
     - GET
-    name: flights-service_get-flights
+    name: flights-service-for-cbs_get-flights
     paths:
     - ~/flights$
     plugins: []
@@ -66,10 +66,10 @@ services:
     tags:
     - flight-data
     - platform-repo-managed
-  - id: 3210c3ed-9976-500d-ac03-07eaac972ad0
+  - id: 0a5acb83-9695-5c3a-84ea-82367858d975
     methods:
     - GET
-    name: flights-service_get-flight-by-number
+    name: flights-service-for-cbs_get-flight-by-number
     paths:
     - ~/flights/(?<flightnumber>[^#?/]+)$
     plugins: []
@@ -80,10 +80,10 @@ services:
     tags:
     - flight-data
     - platform-repo-managed
-  - id: 08020aa2-6106-59ec-903a-3459e7cbb629
+  - id: ef29e823-fb61-57f3-a7cb-98525e50a55c
     methods:
     - GET
-    name: flights-service_get-flight-details
+    name: flights-service-for-cbs_get-flight-details
     paths:
     - ~/flights/(?<flightnumber>[^#?/]+)/details$
     plugins: []
@@ -94,10 +94,10 @@ services:
     tags:
     - flight-data
     - platform-repo-managed
-  - id: a5023323-0468-5a77-baf2-13578fec61b0
+  - id: ee6ee924-0946-528f-9821-c005ce6b8345
     methods:
     - GET
-    name: flights-service_health_get
+    name: flights-service-for-cbs_health_get
     paths:
     - ~/health$
     plugins: []
@@ -111,18 +111,18 @@ services:
   tags:
   - flight-data
   - platform-repo-managed
-- host: routes.kongair
-  id: 5bbc0ad8-3b7c-5dfe-a676-b28f30523a6f
-  name: routes-service
+- host: api.kong-air.com
+  id: 4bbacf02-28e4-5b8b-b2ff-1c08617ef909
+  name: routes-service-for-cbs
   path: /
   plugins: []
-  port: 8081
-  protocol: http
+  port: 443
+  protocol: https
   routes:
-  - id: 4da7a5e5-9e69-59af-a6c3-46a675c5bac6
+  - id: 370f62b1-7ad1-554b-a2c2-ea9f43f351b1
     methods:
     - GET
-    name: routes-service_health_get
+    name: routes-service-for-cbs_health_get
     paths:
     - ~/health$
     plugins: []
@@ -133,10 +133,10 @@ services:
     tags:
     - flight-data
     - platform-repo-managed
-  - id: 89f28ad3-74db-5149-8fa5-f7fffbfda79c
+  - id: ee4e5490-4128-581f-af51-86c4c3847299
     methods:
     - GET
-    name: routes-service_get-routes
+    name: routes-service-for-cbs_get-routes
     paths:
     - ~/routes$
     plugins: []
@@ -147,10 +147,10 @@ services:
     tags:
     - flight-data
     - platform-repo-managed
-  - id: 831bf89a-08be-5dbd-bcd2-aa2348d784d3
+  - id: b1b32159-91dd-5336-922f-9836be8f2d87
     methods:
     - GET
-    name: routes-service_get-route
+    name: routes-service-for-cbs_get-route
     paths:
     - ~/routes/(?<id>[^#?/]+)$
     plugins: []
