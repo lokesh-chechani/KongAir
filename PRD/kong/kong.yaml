@@ -45,17 +45,17 @@ plugins:
   - platform-repo-managed
 services:
 - host: api.kong-air.com
-  id: d785c81c-d6e4-53f3-b49b-610423740143
-  name: flights-service-for-cbs-spine
+  id: 9d1a1e85-ed56-5965-9d9f-aceaadc2917f
+  name: flights-service-for-cbs-spine-demo
   path: /
   plugins: []
   port: 443
   protocol: https
   routes:
-  - id: 7e721956-cbfe-556f-8f3b-9989cecf9f1b
+  - id: 6a0d2dd0-7095-53e0-b53d-c3f9fb4caf8f
     methods:
     - GET
-    name: flights-service-for-cbs-spine_get-flights
+    name: flights-service-for-cbs-spine-demo_get-flights
     paths:
     - ~/flights$
     plugins: []
@@ -64,12 +64,12 @@ services:
     regex_priority: 200
     strip_path: false
     tags:
-    - flight-data-cbs
+    - flight-data-cbs-demo
     - platform-repo-managed
-  - id: bb5ded39-0d6a-5c70-8d0f-9be0744e61b2
+  - id: f2a484ae-a309-5f22-b446-7606acdc3f2e
     methods:
     - GET
-    name: flights-service-for-cbs-spine_get-flight-by-number
+    name: flights-service-for-cbs-spine-demo_get-flight-by-number
     paths:
     - ~/flights/(?<flightnumber>[^#?/]+)$
     plugins: []
@@ -78,12 +78,12 @@ services:
     regex_priority: 100
     strip_path: false
     tags:
-    - flight-data-cbs
+    - flight-data-cbs-demo
     - platform-repo-managed
-  - id: d0deaaa8-8ee9-52bf-acc6-d926a838b9bc
+  - id: d8153873-d78f-58d5-b546-4d77efec3630
     methods:
     - GET
-    name: flights-service-for-cbs-spine_get-flight-details
+    name: flights-service-for-cbs-spine-demo_get-flight-details
     paths:
     - ~/flights/(?<flightnumber>[^#?/]+)/details$
     plugins: []
@@ -92,12 +92,12 @@ services:
     regex_priority: 100
     strip_path: false
     tags:
-    - flight-data-cbs
+    - flight-data-cbs-demo
     - platform-repo-managed
-  - id: 1862dc0c-0728-51ab-87a7-4d585c15e2d3
+  - id: 961c4acf-d51e-5acd-95e8-2451ac6a7d95
     methods:
     - GET
-    name: flights-service-for-cbs-spine_health_get
+    name: flights-service-for-cbs-spine-demo_health_get
     paths:
     - ~/health$
     plugins: []
@@ -106,23 +106,23 @@ services:
     regex_priority: 200
     strip_path: false
     tags:
-    - flight-data-cbs
+    - flight-data-cbs-demo
     - platform-repo-managed
   tags:
-  - flight-data-cbs
+  - flight-data-cbs-demo
   - platform-repo-managed
 - host: api.kong-air.com
-  id: ef3daa66-5deb-5a4d-8955-a931f201125b
-  name: routes-service-for-cbs-spine
+  id: 6867707b-97b0-5678-9f12-ceebf338c2c2
+  name: routes-service-for-cbs-spine-demo
   path: /
   plugins: []
   port: 443
   protocol: https
   routes:
-  - id: 8c40a58e-b084-5aee-81ad-cd2da21ff652
+  - id: 406e51e3-0da0-553c-8d73-1d816aeefedd
     methods:
     - GET
-    name: routes-service-for-cbs-spine_health_get
+    name: routes-service-for-cbs-spine-demo_health_get
     paths:
     - ~/health$
     plugins: []
@@ -131,12 +131,12 @@ services:
     regex_priority: 200
     strip_path: false
     tags:
-    - flight-data
+    - flight-data-cbs-demo
     - platform-repo-managed
-  - id: d14c41b1-e9f4-5146-ba24-02d8cd974df8
+  - id: 38c681d8-1176-52b2-a2b2-db50f835529e
     methods:
     - GET
-    name: routes-service-for-cbs-spine_get-routes
+    name: routes-service-for-cbs-spine-demo_get-routes
     paths:
     - ~/routes$
     plugins: []
@@ -145,12 +145,12 @@ services:
     regex_priority: 200
     strip_path: false
     tags:
-    - flight-data
+    - flight-data-cbs-demo
     - platform-repo-managed
-  - id: a1d84730-4369-5d93-9bbd-07845bbf7704
+  - id: 8b6a0b67-8627-51d1-a9f5-0d0ab76c6df6
     methods:
     - GET
-    name: routes-service-for-cbs-spine_get-route
+    name: routes-service-for-cbs-spine-demo_get-route
     paths:
     - ~/routes/(?<id>[^#?/]+)$
     plugins: []
@@ -159,10 +159,10 @@ services:
     regex_priority: 100
     strip_path: false
     tags:
-    - flight-data
+    - flight-data-cbs-demo
     - platform-repo-managed
   tags:
-  - flight-data
+  - flight-data-cbs-demo
   - platform-repo-managed
 - host: bookings.kongair
   id: 22e1521b-9b91-5d2f-917b-4463066f1aed
